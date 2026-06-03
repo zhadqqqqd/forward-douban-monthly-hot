@@ -4,13 +4,13 @@
   "icon": "https://assets.vvebo.vip/scripts/icon.png",
   "widgets": [
     {
-      "id": "forward.douban.monthlyhot",
+      "id": "doubanmonthlyhot",
       "title": "豆瓣本月热播",
       "description": "展示豆瓣本月热播电影和剧集",
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "Forward",
-      "url": "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/3a83c37/widgets/douban-monthly-hot.js"
+      "url": "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/c29102e/widgets/douban-monthly-hot.js"
     }
   ]
 }

@@ -12,15 +12,15 @@ assert.ok(Array.isArray(manifest.widgets));
 assert.equal(manifest.widgets.length, 1);
 
 const widget = manifest.widgets[0];
-assert.equal(widget.id, "forward.douban.monthlyhot");
-assert.match(widget.id, /^forward\.[A-Za-z0-9.]+$/);
+assert.equal(widget.id, "doubanmonthlyhot");
+assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.requiredVersion, "0.0.1");
 assert.equal(widget.version, "1.0.0");
 assert.equal(widget.author, "Forward");
 assert.equal(
   widget.url,
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/3a83c37/widgets/douban-monthly-hot.js"
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/c29102e/widgets/douban-monthly-hot.js"
 );
 assert.equal(widget.url.includes("/main/"), false);
 
