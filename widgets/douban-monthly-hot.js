@@ -1,5 +1,5 @@
 WidgetMetadata = {
-  id: "forward.douban.monthly-hot",
+  id: "forward.douban.monthlyhot",
   title: "豆瓣本月热播",
   version: "1.0.0",
   requiredVersion: "0.0.1",
@@ -14,7 +14,7 @@ WidgetMetadata = {
       cacheDuration: 3600,
       params: [
         { name: "page", title: "页码", type: "page" },
-        { name: "count", title: "数量", type: "count", value: 20 },
+        { name: "count", title: "数量", type: "count", value: "20" },
       ],
     },
     {
@@ -24,7 +24,7 @@ WidgetMetadata = {
       cacheDuration: 3600,
       params: [
         { name: "page", title: "页码", type: "page" },
-        { name: "count", title: "数量", type: "count", value: 20 },
+        { name: "count", title: "数量", type: "count", value: "20" },
       ],
     },
   ],

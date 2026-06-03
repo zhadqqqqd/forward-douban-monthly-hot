@@ -62,8 +62,11 @@ global.WidgetMetadata = {};
 eval(fs.readFileSync(modulePath, "utf8"));
 
 (async () => {
-  assert.equal(WidgetMetadata.id, "forward.douban.monthly-hot");
+  assert.equal(WidgetMetadata.id, "forward.douban.monthlyhot");
   assert.equal(WidgetMetadata.modules.length, 2);
+  assert.match(WidgetMetadata.id, /^forward\.[A-Za-z0-9.]+$/);
+  assert.equal(WidgetMetadata.modules[0].params[1].value, "20");
+  assert.equal(WidgetMetadata.modules[1].params[1].value, "20");
   assert.deepEqual(
     WidgetMetadata.modules.map((module) => module.functionName),
     ["loadMonthlyHotMovies", "loadMonthlyHotTV"]
