@@ -1,0 +1,16 @@
+{
+  "title": "Forward Douban Widgets",
+  "description": "Douban widgets for Forward",
+  "icon": "https://assets.vvebo.vip/scripts/icon.png",
+  "widgets": [
+    {
+      "id": "forward.douban.monthly-hot",
+      "title": "豆瓣本月热播",
+      "description": "展示豆瓣本月热播电影和剧集",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "Forward",
+      "url": "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/main/widgets/douban-monthly-hot.js"
+    }
+  ]
+}
