@@ -1,5 +1,5 @@
 WidgetMetadata = {
-  id: "forward.douban.monthlyhot",
+  id: "doubanmonthlyhot",
   title: "豆瓣本月热播",
   version: "1.0.0",
   requiredVersion: "0.0.1",
@@ -8,24 +8,14 @@ WidgetMetadata = {
   site: "https://movie.douban.com/",
   modules: [
     {
-      id: "loadMonthlyHotMovies",
       title: "本月热播电影",
       functionName: "loadMonthlyHotMovies",
-      cacheDuration: 3600,
-      params: [
-        { name: "page", title: "页码", type: "page" },
-        { name: "count", title: "数量", type: "count", value: "20" },
-      ],
+      params: [],
     },
     {
-      id: "loadMonthlyHotTV",
       title: "本月热播剧集",
       functionName: "loadMonthlyHotTV",
-      cacheDuration: 3600,
-      params: [
-        { name: "page", title: "页码", type: "page" },
-        { name: "count", title: "数量", type: "count", value: "20" },
-      ],
+      params: [],
     },
   ],
 };
