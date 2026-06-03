@@ -20,7 +20,8 @@ assert.equal(widget.version, "1.0.0");
 assert.equal(widget.author, "Forward");
 assert.equal(
   widget.url,
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/main/widgets/douban-monthly-hot.js"
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/3a83c37/widgets/douban-monthly-hot.js"
 );
+assert.equal(widget.url.includes("/main/"), false);
 
 console.log("ok");
