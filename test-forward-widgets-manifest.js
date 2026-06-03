@@ -1,8 +1,8 @@
 const fs = require("fs");
 const assert = require("assert/strict");
 
-const manifestPath = "forward-widgets.fwd";
-assert.equal(fs.existsSync(manifestPath), true, "forward-widgets.fwd should exist");
+const manifestPath = "widgets.fwd";
+assert.equal(fs.existsSync(manifestPath), true, "widgets.fwd should exist");
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 
@@ -20,8 +20,8 @@ assert.equal(widget.version, "1.0.0");
 assert.equal(widget.author, "Forward");
 assert.equal(
   widget.url,
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/c29102e/widgets/douban-monthly-hot.js"
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/refs/heads/main/widgets/douban-monthly-hot.js"
 );
-assert.equal(widget.url.includes("/main/"), false);
+assert.equal(widget.url.includes("/refs/heads/main/"), true);
 
 console.log("ok");
