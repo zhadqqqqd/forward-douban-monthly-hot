@@ -2,7 +2,7 @@ const assert = require("assert/strict");
 const vm = require("vm");
 
 const MANIFEST_URLS = [
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/refs/heads/main/widgets.fwd",
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/main/widgets.fwd",
   "https://zhadqqqqd.github.io/forward-douban-monthly-hot/widgets.fwd",
   "https://zhadqqqqd.github.io/forward-douban-monthly-hot/widgets.json",
 ];
