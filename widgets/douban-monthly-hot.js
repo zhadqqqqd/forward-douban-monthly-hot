@@ -1,11 +1,11 @@
 WidgetMetadata = {
-  id: "doubanmonthlyhot",
+  id: "zhadqqqqd.douban.monthlyhot",
   title: "豆瓣本月热播",
-  version: "1.0.0",
+  version: "1.1.0",
   requiredVersion: "0.0.1",
   description: "豆瓣本月热播电影和剧集",
-  author: "Forward",
-  site: "https://movie.douban.com/",
+  author: "zhadqqqqd",
+  site: "https://github.com/zhadqqqqd/forward-douban-monthly-hot",
   modules: [
     {
       id: "monthlyHotMovies",

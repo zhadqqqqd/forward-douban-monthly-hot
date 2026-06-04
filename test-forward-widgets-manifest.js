@@ -15,18 +15,18 @@ assert.ok(Array.isArray(manifest.widgets));
 assert.equal(manifest.widgets.length, 1);
 
 const widget = manifest.widgets[0];
-assert.equal(widget.id, "doubanmonthlyhot");
+assert.equal(widget.id, "zhadqqqqd.douban.monthlyhot");
 assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.description, metadata.description);
 assert.equal(widget.requiredVersion, "0.0.1");
-assert.equal(widget.version, "1.0.0");
-assert.equal(widget.author, "Forward");
+assert.equal(widget.version, "1.1.0");
+assert.equal(widget.author, "zhadqqqqd");
 assert.equal(
   widget.url,
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/refs/heads/main/widgets/douban-monthly-hot.js"
+  "https://zhadqqqqd.github.io/forward-douban-monthly-hot/widgets/douban-monthly-hot.js"
 );
-assert.equal(widget.url.includes("/refs/heads/main/"), true);
+assert.equal(widget.url.includes("raw.githubusercontent.com"), false);
 
 for (const key of ["id", "title", "description", "requiredVersion", "version", "author"]) {
   assert.equal(widget[key], metadata[key], `manifest ${key} should match WidgetMetadata`);

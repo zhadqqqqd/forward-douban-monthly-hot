@@ -62,7 +62,9 @@ global.WidgetMetadata = {};
 eval(fs.readFileSync(modulePath, "utf8"));
 
 (async () => {
-  assert.equal(WidgetMetadata.id, "doubanmonthlyhot");
+  assert.equal(WidgetMetadata.id, "zhadqqqqd.douban.monthlyhot");
+  assert.equal(WidgetMetadata.version, "1.1.0");
+  assert.equal(WidgetMetadata.author, "zhadqqqqd");
   assert.equal(WidgetMetadata.modules.length, 2);
   assert.match(WidgetMetadata.id, /^[A-Za-z0-9.]+$/);
   assert.deepEqual(
