@@ -1,0 +1,547 @@
+{
+  "generatedAt": "2026-06-04T16:15:33.362Z",
+  "movie": [
+    {
+      "id": "37067461",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "女士优先",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2932533733.jpg",
+      "rating": 6.3,
+      "description": "评分 6.3 · 2026 / 美国 / 喜剧 爱情 / 西娅·夏罗克 / 萨莎·拜伦·科恩 裴淳华"
+    },
+    {
+      "id": "37233517",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "杀木池",
+      "posterPath": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2929977476.jpg",
+      "rating": 5.4,
+      "description": "评分 5.4 · 2026 / 韩国 / 惊悚 恐怖 / 李相珉 / 金惠奫 李钟圆"
+    },
+    {
+      "id": "38031726",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "寻女朝圣路",
+      "posterPath": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2931613461.jpg",
+      "rating": 6.8,
+      "description": "评分 6.8 · 2025 / 意大利 / 喜剧 / 热纳罗·努基阿德 / 切柯·扎罗内 比阿特丽斯·阿荷纳"
+    },
+    {
+      "id": "35633902",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "佐贺偶像是传奇 梦想银河乐园",
+      "posterPath": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2920836471.jpg",
+      "rating": 8.7,
+      "description": "评分 8.7 · 2025 / 日本 / 动画 / 宇田钢之介 佐藤威 石田贵史 / 宫野真守 本渡枫"
+    },
+    {
+      "id": "36929221",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "木乃伊",
+      "posterPath": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2930019594.jpg",
+      "rating": 6.1,
+      "description": "评分 6.1 · 2026 / 爱尔兰 美国 西班牙 加拿大 / 恐怖 / 李·克罗宁 / 杰克·莱诺 莱娅·科斯塔"
+    },
+    {
+      "id": "36680492",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "大濛",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2925804842.jpg",
+      "rating": 7.8,
+      "description": "评分 7.8 · 2025 / 中国台湾 / 剧情 / 陈玉勋 / 方郁婷 柯炜林"
+    },
+    {
+      "id": "37116612",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "世界的主人",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2924183583.jpg",
+      "rating": 9.1,
+      "description": "评分 9.1 · 2025 / 韩国 / 剧情 / 尹佳恩 / 徐粹彬 张慧珍"
+    },
+    {
+      "id": "36367195",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "家弑服务",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2932673659.jpg",
+      "rating": 7.1,
+      "description": "评分 7.1 · 2025 / 美国 / 剧情 悬疑 惊悚 / 保罗·费格 / 西德尼·斯维尼 阿曼达·塞弗里德"
+    },
+    {
+      "id": "36995126",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "爱情抓马",
+      "posterPath": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2929524191.jpg",
+      "rating": 6.9,
+      "description": "评分 6.9 · 2026 / 美国 / 剧情 喜剧 爱情 / 克里斯托弗·博格利 / 赞达亚 罗伯特·帕丁森"
+    },
+    {
+      "id": "37332784",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "我，许可",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2932103692.jpg",
+      "rating": 8.2,
+      "description": "评分 8.2 · 2026 / 中国大陆 / 剧情 喜剧 / 杨荔钠 / 文淇 秦海璐"
+    },
+    {
+      "id": "37242440",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "惊蛰无声",
+      "posterPath": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2929759786.jpg",
+      "rating": 5.9,
+      "description": "评分 5.9 · 2026 / 中国大陆 / 剧情 犯罪 / 张艺谋 / 易烊千玺 朱一龙"
+    },
+    {
+      "id": "37005312",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "幸运有八只触手",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2931434593.jpg",
+      "rating": 7.7,
+      "description": "评分 7.7 · 2026 / 美国 / 剧情 喜剧 / 奥利维亚·纽曼 / 莎莉·菲尔德 刘易斯·普尔曼"
+    },
+    {
+      "id": "35590993",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "长夜将尽",
+      "posterPath": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2931205054.jpg",
+      "rating": 6.5,
+      "description": "评分 6.5 · 2025 / 中国大陆 / 剧情 爱情 犯罪 / 王通 / 万茜 饶晓志"
+    },
+    {
+      "id": "26022233",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "蜂蜜的针",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2930744969.jpg",
+      "rating": 6.7,
+      "description": "评分 6.7 · 2026 / 中国大陆 / 爱情 悬疑 犯罪 / 袁梅 / 袁泉 耿乐"
+    },
+    {
+      "id": "36926954",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "杀的就是你",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2928787017.jpg",
+      "rating": 6.9,
+      "description": "评分 6.9 · 2026 / 美国 / 喜剧 动作 恐怖 / 基里尔·索科洛夫 / 莎姬·贝兹 帕特丽夏·阿奎特"
+    },
+    {
+      "id": "36978169",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "与王生活的男人",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2928835899.jpg",
+      "rating": 7.4,
+      "description": "评分 7.4 · 2026 / 韩国 / 剧情 历史 / 张抗俊 / 柳海真 朴志训"
+    },
+    {
+      "id": "37019075",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "蒙特利尔，我的美人",
+      "posterPath": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2926397741.jpg",
+      "rating": 7.6,
+      "description": "评分 7.6 · 2025 / 加拿大 / 剧情 同性 / 和晓丹 / 陈冲 夏洛特·奥宾"
+    },
+    {
+      "id": "36832900",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "准备好了没2：我来了",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2929654337.jpg",
+      "rating": 6,
+      "description": "评分 6 · 2026 / 美国 加拿大 / 喜剧 惊悚 恐怖 / 泰勒·吉勒特 马特·贝蒂内利-奥尔平 / 萨玛拉·维文 凯瑟琳·纽顿"
+    },
+    {
+      "id": "35010610",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "挽救计划",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2931370692.jpg",
+      "rating": 8.6,
+      "description": "评分 8.6 · 2026 / 美国 / 剧情 科幻 惊悚 / 菲尔·罗德 克里斯托弗·米勒 / 瑞恩·高斯林 桑德拉·惠勒"
+    },
+    {
+      "id": "37226826",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "幽旅巫咒",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2931049468.jpg",
+      "rating": 6.2,
+      "description": "评分 6.2 · 2026 / 爱尔兰 美国 / 恐怖 / 达米安·麦卡锡 / 亚当·斯科特 大卫·威尔莫特"
+    },
+    {
+      "id": "36877245",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "火遮眼",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2932757540.jpg",
+      "rating": 8.5,
+      "description": "评分 8.5 · 2025 / 中国香港 中国大陆 / 动作 犯罪 / 谷垣健治 / 谢苗 林科灯"
+    },
+    {
+      "id": "37312482",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "爱上平行时空的你",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2926958102.jpg",
+      "rating": 8,
+      "description": "评分 8 · 2025 / 俄罗斯 / 剧情 喜剧 爱情 奇幻 / 达里娅·列别杰娃 / 米拉·埃尔绍娃 尤里·纳索诺夫"
+    },
+    {
+      "id": "37123675",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "致命之旅",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2931255112.jpg",
+      "rating": 6.3,
+      "description": "评分 6.3 · 2026 / 美国 / 喜剧 动作 惊悚 / 乔玛·塔科内 / 杰森·席格尔 萨玛拉·维文"
+    },
+    {
+      "id": "36749573",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "极限审判",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2929006010.jpg",
+      "rating": 7.2,
+      "description": "评分 7.2 · 2026 / 美国 / 动作 科幻 悬疑 / 提莫·贝克曼贝托夫 / 克里斯·帕拉特 丽贝卡·弗格森"
+    },
+    {
+      "id": "34930810",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "平场之月",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2923847559.jpg",
+      "rating": 7.5,
+      "description": "评分 7.5 · 2025 / 日本 / 剧情 爱情 / 土井裕泰 / 堺雅人 井川遥"
+    },
+    {
+      "id": "37069578",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "万事顺利",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2927082318.jpg",
+      "rating": 7.5,
+      "description": "评分 7.5 · 2025 / 日本 / 剧情 / 児山隆 / 南沙良 出口夏希"
+    },
+    {
+      "id": "36433332",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "抖擞",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2931629972.jpg",
+      "rating": 6.2,
+      "description": "评分 6.2 · 2026 / 美国 / 喜剧 犯罪 / 彼得·法雷里 / 马克·沃尔伯格 保罗·沃尔特·豪泽"
+    },
+    {
+      "id": "36371992",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "铁肺",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2932888253.jpg",
+      "rating": 5.4,
+      "description": "评分 5.4 · 2026 / 美国 / 恐怖 / 马克·费施巴赫 / 马克·费施巴赫 卡萝·卡普兰"
+    },
+    {
+      "id": "36769881",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "导火线",
+      "posterPath": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2932798538.jpg",
+      "rating": 6.9,
+      "description": "评分 6.9 · 2025 / 英国 / 剧情 动作 悬疑 惊悚 战争 犯罪 / 大卫·马肯兹 / 亚伦·泰勒-约翰逊 西奥·詹姆斯"
+    },
+    {
+      "id": "36909312",
+      "type": "douban",
+      "mediaType": "movie",
+      "title": "翠湖",
+      "posterPath": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2930745012.jpg",
+      "rating": 7.7,
+      "description": "评分 7.7 · 2025 / 中国大陆 / 剧情 家庭 / 王籽璇 / 李振平 王娟"
+    }
+  ],
+  "tv": [
+    {
+      "id": "35295564",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "主角",
+      "posterPath": "",
+      "rating": 8.1,
+      "description": "评分 8.1 · 48集全 · 2026 / 中国大陆 / 剧情 / 李少飞 / 张嘉益 刘浩存"
+    },
+    {
+      "id": "36883114",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "家业",
+      "posterPath": "",
+      "rating": 0,
+      "description": "暂无评分 · 42集全 · 2026 / 中国大陆 / 剧情 古装 / 惠楷栋 王成欣 / 杨紫 韩东君"
+    },
+    {
+      "id": "36894289",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "翘楚",
+      "posterPath": "",
+      "rating": 0,
+      "description": "暂无评分 · 更新至7集 · 2026 / 中国大陆 / 剧情 / 杨龙 / 陈都灵 周翊然"
+    },
+    {
+      "id": "36310054",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "雨霖铃",
+      "posterPath": "",
+      "rating": 6.9,
+      "description": "评分 6.9 · 更新至35集 · 2026 / 中国大陆 / 剧情 武侠 古装 / 刘洪源 / 杨洋 章若楠"
+    },
+    {
+      "id": "35517044",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "低智商犯罪",
+      "posterPath": "",
+      "rating": 8.1,
+      "description": "评分 8.1 · 24集全 · 2026 / 中国大陆 / 剧情 犯罪 / 刘海波 / 王骁 田曦薇"
+    },
+    {
+      "id": "37061179",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "校园之外 第一季",
+      "posterPath": "",
+      "rating": 8.4,
+      "description": "评分 8.4 · 2026 / 美国 / 剧情 爱情 运动 / 西尔弗·特里 / 艾拉·布赖特 贝尔蒙特·卡梅利"
+    },
+    {
+      "id": "35758798",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "亢奋 第三季",
+      "posterPath": "",
+      "rating": 6.3,
+      "description": "评分 6.3 · 2026 / 美国 / 剧情 / 萨姆·莱文森 / 赞达亚 亨特·莎弗"
+    },
+    {
+      "id": "37112008",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "耀眼",
+      "posterPath": "",
+      "rating": 0,
+      "description": "暂无评分 · 更新至18集 · 2026 / 中国大陆 / 剧情 爱情 / 祝东宁 / 关晓彤 李昀锐"
+    },
+    {
+      "id": "36680667",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "超能路人甲",
+      "posterPath": "",
+      "rating": 7.2,
+      "description": "评分 7.2 · 2026 / 韩国 / 剧情 喜剧 动作 科幻 冒险 / 刘仁值 / 朴恩斌 车银优"
+    },
+    {
+      "id": "33371937",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "八千里路云和月",
+      "posterPath": "",
+      "rating": 6.4,
+      "description": "评分 6.4 · 2026 / 中国大陆 / 剧情 历史 战争 / 张永新 / 王阳 万茜"
+    },
+    {
+      "id": "36240199",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "暗影蜘蛛侠",
+      "posterPath": "",
+      "rating": 7.3,
+      "description": "评分 7.3 · 2026 / 美国 / 剧情 动作 科幻 悬疑 惊悚 犯罪 奇幻 冒险 / 哈利·布拉德比尔 / 尼古拉斯·凯奇 拉蒙尼·莫里斯"
+    },
+    {
+      "id": "37370438",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "绝望写手 第五季",
+      "posterPath": "",
+      "rating": 9.6,
+      "description": "评分 9.6 · 2026 / 美国 / 剧情 喜剧 / 露西亚·安尼洛 保罗·当斯 / 珍·斯玛特 汉娜·爱宾德"
+    },
+    {
+      "id": "37134474",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "地狱占星师",
+      "posterPath": "",
+      "rating": 8.1,
+      "description": "评分 8.1 · 2026 / 日本 / 剧情 传记 / 泷本智行 大庭功睦 / 户田惠梨香 伊藤沙莉"
+    },
+    {
+      "id": "36343491",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "黑袍纠察队 第五季",
+      "posterPath": "",
+      "rating": 6.6,
+      "description": "评分 6.6 · 2026 / 美国 / 剧情 喜剧 动作 科幻 犯罪 / 菲利浦·斯格里西亚 莎娜·斯坦 卡伦·卡薇欧拉 / 卡尔·厄本 杰克·奎德"
+    },
+    {
+      "id": "36640247",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "良陈美锦",
+      "posterPath": "",
+      "rating": 5.9,
+      "description": "评分 5.9 · 40集全 · 2026 / 中国大陆 / 剧情 古装 / 金雄豪 / 任敏 此沙"
+    },
+    {
+      "id": "37147970",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "21世纪大君夫人",
+      "posterPath": "",
+      "rating": 7.2,
+      "description": "评分 7.2 · 2026 / 韩国 / 喜剧 爱情 / 朴俊和 裴熙英 / 李知恩 边佑锡"
+    },
+    {
+      "id": "35922594",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "黑夜告白",
+      "posterPath": "",
+      "rating": 7,
+      "description": "评分 7 · 28集全 · 2026 / 中国大陆 / 剧情 悬疑 犯罪 / 王之 / 潘粤明 王鹤棣"
+    },
+    {
+      "id": "37335468",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "努力克服自卑的我们",
+      "posterPath": "",
+      "rating": 8.7,
+      "description": "评分 8.7 · 2026 / 韩国 / 剧情 / 车荣勋 / 具教焕 高允贞"
+    },
+    {
+      "id": "37125831",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "夺命许愿",
+      "posterPath": "",
+      "rating": 7.7,
+      "description": "评分 7.7 · 2026 / 韩国 / 剧情 恐怖 / 朴允书 / 全昭映 姜美娜"
+    },
+    {
+      "id": "36508123",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "瑞克和莫蒂 第九季",
+      "posterPath": "",
+      "rating": 9.1,
+      "description": "评分 9.1 · 2026 / 美国 / 喜剧 动画 / 伊恩·卡多尼 哈利·贝尔登"
+    },
+    {
+      "id": "36554061",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "逐玉",
+      "posterPath": "",
+      "rating": 6.4,
+      "description": "评分 6.4 · 2026 / 中国大陆 / 剧情 爱情 古装 / 曾庆杰 / 田曦薇 张凌赫"
+    },
+    {
+      "id": "36939912",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "方圆八百米",
+      "posterPath": "",
+      "rating": 6.9,
+      "description": "评分 6.9 · 2026 / 中国大陆 / 剧情 犯罪 / 裘仲维 / 丁勇岱 许凯"
+    },
+    {
+      "id": "37261471",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "我的王室死对头",
+      "posterPath": "",
+      "rating": 7.8,
+      "description": "评分 7.8 · 2026 / 韩国 / 喜剧 爱情 奇幻 / 韩泰燮 / 林智妍 许南俊"
+    },
+    {
+      "id": "37369763",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "隐秘的监察",
+      "posterPath": "",
+      "rating": 7.4,
+      "description": "评分 7.4 · 2026 / 韩国 / 喜剧 爱情 / 李秀賢 / 申惠善 孔明"
+    },
+    {
+      "id": "35321975",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "爱情没有神话",
+      "posterPath": "",
+      "rating": 6.8,
+      "description": "评分 6.8 · 37集全 · 2026 / 中国大陆 / 剧情 爱情 / 张晓波 / 唐嫣 赵又廷"
+    },
+    {
+      "id": "35633767",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "佳偶天成",
+      "posterPath": "",
+      "rating": 6.9,
+      "description": "评分 6.9 · 40集全 · 2026 / 中国大陆 / 剧情 爱情 奇幻 古装 / 郭虎 / 任嘉伦 王鹤润"
+    },
+    {
+      "id": "36866390",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "危险关系",
+      "posterPath": "",
+      "rating": 7.9,
+      "description": "评分 7.9 · 2026 / 中国大陆 / 剧情 / 薛晓路 / 孙俪 吴慷仁"
+    },
+    {
+      "id": "37032135",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "寡妇湾",
+      "posterPath": "",
+      "rating": 8.1,
+      "description": "评分 8.1 · 2026 / 美国 / 剧情 喜剧 恐怖 / 村井浩 安德鲁·德扬 塞缪尔·多诺万 缇·威斯特 / 马修·瑞斯 凯特·奥弗林"
+    },
+    {
+      "id": "37296314",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "大唐迷雾",
+      "posterPath": "",
+      "rating": 0,
+      "description": "暂无评分 · 25集全 · 2026 / 中国大陆 / 悬疑 古装 / 项秋良 项河生 / 冯绍峰 邬君梅"
+    },
+    {
+      "id": "36640236",
+      "type": "douban",
+      "mediaType": "tv",
+      "title": "月鳞绮纪",
+      "posterPath": "",
+      "rating": 5.4,
+      "description": "评分 5.4 · 2026 / 中国大陆 / 剧情 爱情 奇幻 古装 / 陆觉 / 鞠婧祎 曾舜晞"
+    }
+  ]
+}

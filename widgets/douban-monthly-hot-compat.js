@@ -47,6 +47,8 @@ const DOUBAN_MONTHLY_HOT_ENDPOINTS = {
   movie: "https://m.douban.com/rexxar/api/v2/subject_collection/movie_hot_gaia/items",
   tv: "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items",
 };
+const DOUBAN_MONTHLY_HOT_FALLBACK_URL =
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.7/data/douban-monthly-hot.json";
 const DOUBAN_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
@@ -64,9 +66,9 @@ async function loadMonthlyHotTV(params = {}) {
 }
 
 async function loadMonthlyHot(mediaType, params = {}) {
+  const page = normalizePositiveInteger(params.page, 1);
+  const count = normalizeCount(params.count);
   try {
-    const page = normalizePositiveInteger(params.page, 1);
-    const count = normalizeCount(params.count);
     const response = await Widget.http.get(DOUBAN_MONTHLY_HOT_ENDPOINTS[mediaType], {
       headers: DOUBAN_HEADERS,
       params: {
@@ -80,9 +82,30 @@ async function loadMonthlyHot(mediaType, params = {}) {
         ? response.data.subject_collection_items
         : [];
 
-    return subjects.map((subject) => toVideoItem(subject, mediaType));
+    const items = subjects.map((subject) => toVideoItem(subject, mediaType));
+    if (items.length > 0) return items;
   } catch (error) {
     console.error("[douban-monthly-hot] load failed:", error.message || error);
+  }
+
+  return loadFallbackMonthlyHot(mediaType, page, count);
+}
+
+async function loadFallbackMonthlyHot(mediaType, page, count) {
+  try {
+    const response = await Widget.http.get(DOUBAN_MONTHLY_HOT_FALLBACK_URL, {
+      headers: {
+        "User-Agent": "ForwardWidgets/1.0.0",
+      },
+    });
+    const items =
+      response && response.data && Array.isArray(response.data[mediaType])
+        ? response.data[mediaType]
+        : [];
+    const start = (page - 1) * count;
+    return items.slice(start, start + count).filter((item) => item && item.id && item.title);
+  } catch (error) {
+    console.error("[douban-monthly-hot] fallback failed:", error.message || error);
     return [];
   }
 }
