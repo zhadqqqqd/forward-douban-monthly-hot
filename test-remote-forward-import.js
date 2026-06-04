@@ -13,7 +13,7 @@ async function fetchText(url) {
   return response.text();
 }
 
-function loadMetadata(source) {
+function loadMetadata(source, options = {}) {
   const sandbox = {
     console,
     Widget: {
@@ -23,7 +23,8 @@ function loadMetadata(source) {
     },
   };
   vm.createContext(sandbox);
-  vm.runInContext(source, sandbox, { filename: "remote-widget.js" });
+  const prefix = options.strict ? '"use strict";\n' : "";
+  vm.runInContext(prefix + source, sandbox, { filename: "remote-widget.js" });
   assert.ok(sandbox.WidgetMetadata, "remote WidgetMetadata should exist");
   return {
     ...JSON.parse(JSON.stringify(sandbox.WidgetMetadata)),
@@ -38,14 +39,17 @@ function loadMetadata(source) {
 
     const widget = manifest.widgets[0];
     assert.equal(widget.id, "zhadqqqqd.douban.monthlyhot");
-    assert.equal(widget.version, "1.1.0");
+    assert.equal(widget.version, "1.1.1");
     assert.equal(widget.author, "zhadqqqqd");
     assert.equal(
       widget.url,
       "https://zhadqqqqd.github.io/forward-douban-monthly-hot/widgets/douban-monthly-hot.js"
     );
 
-    const metadata = loadMetadata(await fetchText(widget.url));
+    const source = await fetchText(widget.url);
+    const metadata = loadMetadata(source);
+    const strictMetadata = loadMetadata(source, { strict: true });
+    assert.equal(strictMetadata.id, metadata.id, `${manifestUrl} should load WidgetMetadata in strict JS contexts`);
     for (const key of ["id", "title", "description", "requiredVersion", "version", "author"]) {
       assert.equal(widget[key], metadata[key], `${manifestUrl} ${key} should match WidgetMetadata`);
     }

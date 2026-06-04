@@ -8,6 +8,8 @@ assert.equal(fs.existsSync(manifestPath), true, "widgets.fwd should exist");
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const widgetModulePath = "widgets/douban-monthly-hot.js";
 const metadata = loadWidgetMetadata(widgetModulePath);
+const strictMetadata = loadWidgetMetadata(widgetModulePath, { strict: true });
+assert.equal(strictMetadata.id, metadata.id, "WidgetMetadata should load in strict JS contexts");
 
 assert.equal(manifest.title, "Forward Douban Widgets");
 assert.equal(typeof manifest.description, "string");
@@ -20,7 +22,7 @@ assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.description, metadata.description);
 assert.equal(widget.requiredVersion, "0.0.1");
-assert.equal(widget.version, "1.1.0");
+assert.equal(widget.version, "1.1.1");
 assert.equal(widget.author, "zhadqqqqd");
 assert.equal(
   widget.url,
@@ -64,7 +66,7 @@ assert.deepEqual(
 
 console.log("ok");
 
-function loadWidgetMetadata(filePath) {
+function loadWidgetMetadata(filePath, options = {}) {
   assert.equal(fs.existsSync(filePath), true, `${filePath} should exist`);
 
   const sandbox = {
@@ -76,7 +78,8 @@ function loadWidgetMetadata(filePath) {
     },
   };
   vm.createContext(sandbox);
-  vm.runInContext(fs.readFileSync(filePath, "utf8"), sandbox, { filename: filePath });
+  const prefix = options.strict ? '"use strict";\n' : "";
+  vm.runInContext(prefix + fs.readFileSync(filePath, "utf8"), sandbox, { filename: filePath });
 
   assert.ok(sandbox.WidgetMetadata, "WidgetMetadata should be defined");
   return {
