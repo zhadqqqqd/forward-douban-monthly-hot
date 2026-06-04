@@ -66,11 +66,11 @@ function loadMetadataFromFunctionGlobal(source) {
 
     const widget = manifest.widgets[0];
     assert.equal(widget.id, "zhadqqqqd.douban.monthlyhot");
-    assert.equal(widget.version, "1.1.3");
+    assert.equal(widget.version, "1.1.4");
     assert.equal(widget.author, "zhadqqqqd");
     assert.equal(
       widget.url,
-      "https://zhadqqqqd.github.io/forward-douban-monthly-hot/widgets/douban-monthly-hot.js"
+      "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/main/widgets/douban-monthly-hot.js"
     );
 
     const source = await fetchText(widget.url);

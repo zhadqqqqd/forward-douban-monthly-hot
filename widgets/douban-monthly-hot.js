@@ -1,7 +1,7 @@
 WidgetMetadata = {
   id: "zhadqqqqd.douban.monthlyhot",
   title: "豆瓣本月热播",
-  version: "1.1.3",
+  version: "1.1.4",
   requiredVersion: "0.0.1",
   description: "豆瓣本月热播电影和剧集",
   author: "zhadqqqqd",

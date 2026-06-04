@@ -11,7 +11,7 @@ const modulePath = path.join(__dirname, "widgets", "douban-monthly-hot.js");
   eval(fs.readFileSync(modulePath, "utf8"));
 
   assert.equal(WidgetMetadata.id, "zhadqqqqd.douban.monthlyhot");
-  assert.equal(WidgetMetadata.version, "1.1.3");
+  assert.equal(WidgetMetadata.version, "1.1.4");
   assert.equal(typeof loadMonthlyHotMovies, "function");
   assert.equal(typeof loadMonthlyHotTV, "function");
 

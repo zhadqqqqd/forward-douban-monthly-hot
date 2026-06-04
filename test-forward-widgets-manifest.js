@@ -26,13 +26,13 @@ assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.description, metadata.description);
 assert.equal(widget.requiredVersion, "0.0.1");
-assert.equal(widget.version, "1.1.3");
+assert.equal(widget.version, "1.1.4");
 assert.equal(widget.author, "zhadqqqqd");
 assert.equal(
   widget.url,
-  "https://zhadqqqqd.github.io/forward-douban-monthly-hot/widgets/douban-monthly-hot.js"
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/main/widgets/douban-monthly-hot.js"
 );
-assert.equal(widget.url.includes("raw.githubusercontent.com"), false);
+assert.equal(widget.url.includes("raw.githubusercontent.com"), true);
 
 for (const key of ["id", "title", "description", "requiredVersion", "version", "author"]) {
   assert.equal(widget[key], metadata[key], `manifest ${key} should match WidgetMetadata`);
