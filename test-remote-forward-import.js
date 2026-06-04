@@ -39,7 +39,7 @@ function loadMetadata(source, options = {}) {
 
     const widget = manifest.widgets[0];
     assert.equal(widget.id, "zhadqqqqd.douban.monthlyhot");
-    assert.equal(widget.version, "1.1.1");
+    assert.equal(widget.version, "1.1.2");
     assert.equal(widget.author, "zhadqqqqd");
     assert.equal(
       widget.url,

@@ -8,6 +8,7 @@ coverage/
 .vite/
 .turbo/
 .cache/
+.playwright-cli/
 .venv/
 venv/
 __pycache__/

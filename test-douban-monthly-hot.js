@@ -13,20 +13,20 @@ global.Widget = {
     get: async (url, options = {}) => {
       calls.push({ url, options });
 
-      assert.equal(url, "https://movie.douban.com/j/search_subjects");
-      assert.equal(options.headers.Referer, "https://movie.douban.com/");
-      assert.ok(options.headers["User-Agent"].includes("Mozilla"));
+      assert.match(url, /^https:\/\/m\.douban\.com\/rexxar\/api\/v2\/subject_collection\/.+\/items$/);
+      assert.equal(options.headers.Referer, "https://m.douban.com/");
+      assert.ok(options.headers["User-Agent"].includes("Mobile"));
 
-      const type = options.params.type;
-      if (type === "movie") {
+      if (url.includes("/movie_hot_gaia/")) {
         return {
           data: {
-            subjects: [
+            subject_collection_items: [
               {
                 id: "37067461",
                 title: "女士优先",
-                rate: "6.3",
-                cover: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2932533733.jpg",
+                rating: { value: 6.3 },
+                cover: { url: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2932533733.jpg" },
+                card_subtitle: "2026 / 美国 / 喜剧 爱情",
                 episodes_info: "",
                 is_new: false,
               },
@@ -35,15 +35,16 @@ global.Widget = {
         };
       }
 
-      if (type === "tv") {
+      if (url.includes("/tv_hot/")) {
         return {
           data: {
-            subjects: [
+            subject_collection_items: [
               {
                 id: "36883114",
                 title: "家业",
-                rate: "",
-                cover: "https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2932320661.jpg",
+                rating: { value: 0 },
+                cover: { url: "https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2932320661.jpg" },
+                card_subtitle: "2026 / 中国大陆 / 剧情",
                 episodes_info: "更新至36集",
                 is_new: true,
               },
@@ -52,7 +53,7 @@ global.Widget = {
         };
       }
 
-      throw new Error(`unexpected type: ${type}`);
+      throw new Error(`unexpected url: ${url}`);
     },
   },
 };
@@ -63,7 +64,7 @@ eval(fs.readFileSync(modulePath, "utf8"));
 
 (async () => {
   assert.equal(WidgetMetadata.id, "zhadqqqqd.douban.monthlyhot");
-  assert.equal(WidgetMetadata.version, "1.1.1");
+  assert.equal(WidgetMetadata.version, "1.1.2");
   assert.equal(WidgetMetadata.author, "zhadqqqqd");
   assert.equal(WidgetMetadata.modules.length, 2);
   assert.match(WidgetMetadata.id, /^[A-Za-z0-9.]+$/);
@@ -96,17 +97,15 @@ eval(fs.readFileSync(modulePath, "utf8"));
   const cappedMovies = await loadMonthlyHotMovies({ page: 0, count: 500 });
 
   assert.equal(calls.length, 3);
-  assert.equal(calls[0].options.params.type, "movie");
-  assert.equal(calls[0].options.params.tag, "热门");
-  assert.equal(calls[0].options.params.sort, "recommend");
-  assert.equal(calls[0].options.params.page_limit, 12);
-  assert.equal(calls[0].options.params.page_start, 12);
-  assert.equal(calls[1].options.params.type, "tv");
-  assert.equal(calls[1].options.params.page_limit, 8);
-  assert.equal(calls[1].options.params.page_start, 16);
-  assert.equal(calls[2].options.params.type, "movie");
-  assert.equal(calls[2].options.params.page_limit, 50);
-  assert.equal(calls[2].options.params.page_start, 0);
+  assert.equal(calls[0].url, "https://m.douban.com/rexxar/api/v2/subject_collection/movie_hot_gaia/items");
+  assert.equal(calls[0].options.params.count, 12);
+  assert.equal(calls[0].options.params.start, 12);
+  assert.equal(calls[1].url, "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items");
+  assert.equal(calls[1].options.params.count, 8);
+  assert.equal(calls[1].options.params.start, 16);
+  assert.equal(calls[2].url, "https://m.douban.com/rexxar/api/v2/subject_collection/movie_hot_gaia/items");
+  assert.equal(calls[2].options.params.count, 50);
+  assert.equal(calls[2].options.params.start, 0);
 
   assert.equal(movies.length, 1);
   assert.equal(movies[0].id, "37067461");
@@ -125,6 +124,7 @@ eval(fs.readFileSync(modulePath, "utf8"));
   assert.equal(tvShows[0].mediaType, "tv");
   assert.equal(tvShows[0].rating, 0);
   assert.match(tvShows[0].description, /更新至36集/);
+  assert.match(tvShows[0].description, /中国大陆/);
   assert.match(tvShows[0].description, /新上榜/);
   assert.equal(tvShows[0].link, undefined);
 

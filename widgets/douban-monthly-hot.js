@@ -1,7 +1,7 @@
 var WidgetMetadata = {
   id: "zhadqqqqd.douban.monthlyhot",
   title: "豆瓣本月热播",
-  version: "1.1.1",
+  version: "1.1.2",
   requiredVersion: "0.0.1",
   description: "豆瓣本月热播电影和剧集",
   author: "zhadqqqqd",
@@ -52,11 +52,14 @@ var WidgetMetadata = {
   ],
 };
 
-const DOUBAN_MONTHLY_HOT_URL = "https://movie.douban.com/j/search_subjects";
+const DOUBAN_MONTHLY_HOT_ENDPOINTS = {
+  movie: "https://m.douban.com/rexxar/api/v2/subject_collection/movie_hot_gaia/items",
+  tv: "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items",
+};
 const DOUBAN_HEADERS = {
   "User-Agent":
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-  Referer: "https://movie.douban.com/",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
+  Referer: "https://m.douban.com/",
 };
 const DEFAULT_COUNT = 20;
 const MAX_COUNT = 50;
@@ -73,20 +76,17 @@ async function loadMonthlyHot(mediaType, params = {}) {
   try {
     const page = normalizePositiveInteger(params.page, 1);
     const count = normalizeCount(params.count);
-    const response = await Widget.http.get(DOUBAN_MONTHLY_HOT_URL, {
+    const response = await Widget.http.get(DOUBAN_MONTHLY_HOT_ENDPOINTS[mediaType], {
       headers: DOUBAN_HEADERS,
       params: {
-        type: mediaType,
-        tag: "热门",
-        sort: "recommend",
-        page_limit: count,
-        page_start: (page - 1) * count,
+        start: (page - 1) * count,
+        count,
       },
     });
 
     const subjects =
-      response && response.data && Array.isArray(response.data.subjects)
-        ? response.data.subjects
+      response && response.data && Array.isArray(response.data.subject_collection_items)
+        ? response.data.subject_collection_items
         : [];
 
     return subjects.map((subject) => toVideoItem(subject, mediaType));
@@ -107,13 +107,13 @@ function normalizePositiveInteger(value, fallback) {
 }
 
 function toVideoItem(subject, mediaType) {
-  const rating = parseRating(subject && subject.rate);
+  const rating = parseRating(subject && (subject.rate || (subject.rating && subject.rating.value)));
   return {
     id: subject && subject.id != null ? String(subject.id) : "",
     type: "douban",
     mediaType,
     title: (subject && (subject.title || subject.name)) || "",
-    posterPath: (subject && subject.cover) || "",
+    posterPath: (subject && (typeof subject.cover === "string" ? subject.cover : subject.cover && subject.cover.url)) || "",
     rating,
     description: buildDescription(subject, rating),
   };
@@ -133,6 +133,9 @@ function buildDescription(subject, rating) {
   }
   if (subject && subject.episodes_info) {
     parts.push(subject.episodes_info);
+  }
+  if (subject && (subject.card_subtitle || subject.info)) {
+    parts.push(subject.card_subtitle || subject.info);
   }
   if (subject && subject.is_new) {
     parts.push("新上榜");

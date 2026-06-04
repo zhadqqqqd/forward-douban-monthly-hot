@@ -22,7 +22,7 @@ assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.description, metadata.description);
 assert.equal(widget.requiredVersion, "0.0.1");
-assert.equal(widget.version, "1.1.1");
+assert.equal(widget.version, "1.1.2");
 assert.equal(widget.author, "zhadqqqqd");
 assert.equal(
   widget.url,
