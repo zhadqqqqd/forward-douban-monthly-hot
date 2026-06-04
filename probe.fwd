@@ -1,0 +1,16 @@
+{
+  "title": "Forward Probe Widgets",
+  "description": "Minimal static widget for Forward import diagnostics",
+  "icon": "https://assets.vvebo.vip/scripts/icon.png",
+  "widgets": [
+    {
+      "id": "forwardprobe",
+      "title": "Forward Probe",
+      "description": "Minimal static widget for Forward import diagnostics",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "zhadqqqqd",
+      "url": "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.6/widgets/probe.js"
+    }
+  ]
+}
