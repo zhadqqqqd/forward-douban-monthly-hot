@@ -8,14 +8,46 @@ WidgetMetadata = {
   site: "https://movie.douban.com/",
   modules: [
     {
+      id: "monthlyHotMovies",
       title: "本月热播电影",
+      description: "豆瓣本月热播电影",
+      requiresWebView: false,
       functionName: "loadMonthlyHotMovies",
-      params: [],
+      cacheDuration: 3600,
+      params: [
+        {
+          name: "page",
+          title: "页码",
+          type: "page",
+        },
+        {
+          name: "count",
+          title: "数量",
+          type: "count",
+          value: "20",
+        },
+      ],
     },
     {
+      id: "monthlyHotTV",
       title: "本月热播剧集",
+      description: "豆瓣本月热播剧集",
+      requiresWebView: false,
       functionName: "loadMonthlyHotTV",
-      params: [],
+      cacheDuration: 3600,
+      params: [
+        {
+          name: "page",
+          title: "页码",
+          type: "page",
+        },
+        {
+          name: "count",
+          title: "数量",
+          type: "count",
+          value: "20",
+        },
+      ],
     },
   ],
 };
