@@ -15,6 +15,10 @@ for (const manifestPath of ["probe.fwd", "compat.fwd"]) {
   assert.equal(widget.title, metadata.title);
   assert.equal(typeof metadata.modules[0].functionName, "string");
   assert.equal(typeof metadata.functions[metadata.modules[0].functionName], "function");
+  for (const module of metadata.modules) {
+    assert.equal(typeof module.id, "string", `${localPath} module should have id`);
+    assert.ok(module.id.length > 0, `${localPath} module id should not be empty`);
+  }
 }
 
 console.log("diagnostic ok");

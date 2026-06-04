@@ -3,6 +3,7 @@ WidgetMetadata = {
   title: "Forward Probe",
   modules: [
     {
+      id: "loadProbe",
       title: "静态列表",
       requiresWebView: false,
       functionName: "loadProbe",
