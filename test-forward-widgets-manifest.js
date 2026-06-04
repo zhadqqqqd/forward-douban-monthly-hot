@@ -26,11 +26,11 @@ assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.description, metadata.description);
 assert.equal(widget.requiredVersion, "0.0.1");
-assert.equal(widget.version, "1.1.4");
+assert.equal(widget.version, "1.1.5");
 assert.equal(widget.author, "zhadqqqqd");
 assert.equal(
   widget.url,
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/main/widgets/douban-monthly-hot.js"
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.5/widgets/douban-monthly-hot.js"
 );
 assert.equal(widget.url.includes("raw.githubusercontent.com"), true);
 

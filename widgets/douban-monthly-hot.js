@@ -1,7 +1,7 @@
 WidgetMetadata = {
   id: "zhadqqqqd.douban.monthlyhot",
   title: "豆瓣本月热播",
-  version: "1.1.4",
+  version: "1.1.5",
   requiredVersion: "0.0.1",
   description: "豆瓣本月热播电影和剧集",
   author: "zhadqqqqd",
@@ -92,7 +92,7 @@ async function loadMonthlyHot(mediaType, params = {}) {
     return subjects.map((subject) => toVideoItem(subject, mediaType));
   } catch (error) {
     console.error("[douban-monthly-hot] load failed:", error.message || error);
-    throw error;
+    return [];
   }
 }
 

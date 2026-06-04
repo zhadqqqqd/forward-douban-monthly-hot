@@ -7,11 +7,15 @@ const modulePath = path.join(__dirname, "widgets", "douban-monthly-hot.js");
 assert.equal(fs.existsSync(modulePath), true, "widgets/douban-monthly-hot.js should exist");
 
 const calls = [];
+let forceFailure = false;
 
 global.Widget = {
   http: {
     get: async (url, options = {}) => {
       calls.push({ url, options });
+      if (forceFailure) {
+        throw new Error("simulated network failure");
+      }
 
       assert.match(url, /^https:\/\/m\.douban\.com\/rexxar\/api\/v2\/subject_collection\/.+\/items$/);
       assert.equal(options.headers.Referer, "https://m.douban.com/");
@@ -64,7 +68,7 @@ eval(fs.readFileSync(modulePath, "utf8"));
 
 (async () => {
   assert.equal(WidgetMetadata.id, "zhadqqqqd.douban.monthlyhot");
-  assert.equal(WidgetMetadata.version, "1.1.4");
+  assert.equal(WidgetMetadata.version, "1.1.5");
   assert.equal(WidgetMetadata.author, "zhadqqqqd");
   assert.equal(WidgetMetadata.modules.length, 2);
   assert.match(WidgetMetadata.id, /^[A-Za-z0-9.]+$/);
@@ -95,8 +99,11 @@ eval(fs.readFileSync(modulePath, "utf8"));
   const movies = await loadMonthlyHotMovies({ page: 2, count: 12 });
   const tvShows = await loadMonthlyHotTV({ page: 3, count: 8 });
   const cappedMovies = await loadMonthlyHotMovies({ page: 0, count: 500 });
+  forceFailure = true;
+  const failedMovies = await loadMonthlyHotMovies({ page: 1, count: 5 });
+  forceFailure = false;
 
-  assert.equal(calls.length, 3);
+  assert.equal(calls.length, 4);
   assert.equal(calls[0].url, "https://m.douban.com/rexxar/api/v2/subject_collection/movie_hot_gaia/items");
   assert.equal(calls[0].options.params.count, 12);
   assert.equal(calls[0].options.params.start, 12);
@@ -117,6 +124,7 @@ eval(fs.readFileSync(modulePath, "utf8"));
   assert.equal(movies[0].cover, undefined);
   assert.equal(movies[0].link, undefined);
   assert.equal(cappedMovies.length, 1);
+  assert.deepEqual(failedMovies, []);
 
   assert.equal(tvShows.length, 1);
   assert.equal(tvShows[0].id, "36883114");
