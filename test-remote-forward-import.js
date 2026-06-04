@@ -32,6 +32,33 @@ function loadMetadata(source, options = {}) {
   };
 }
 
+function loadMetadataFromFunctionGlobal(source) {
+  const previousWidget = globalThis.Widget;
+  const previousMetadata = globalThis.WidgetMetadata;
+  try {
+    delete globalThis.WidgetMetadata;
+    globalThis.Widget = {
+      http: {
+        get: async () => ({ data: { subjects: [] } }),
+      },
+    };
+    new Function(source)();
+    assert.ok(globalThis.WidgetMetadata, "remote WidgetMetadata should exist on globalThis");
+    return JSON.parse(JSON.stringify(globalThis.WidgetMetadata));
+  } finally {
+    if (previousMetadata === undefined) {
+      delete globalThis.WidgetMetadata;
+    } else {
+      globalThis.WidgetMetadata = previousMetadata;
+    }
+    if (previousWidget === undefined) {
+      delete globalThis.Widget;
+    } else {
+      globalThis.Widget = previousWidget;
+    }
+  }
+}
+
 (async () => {
   for (const manifestUrl of MANIFEST_URLS) {
     const manifest = JSON.parse(await fetchText(manifestUrl));
@@ -39,7 +66,7 @@ function loadMetadata(source, options = {}) {
 
     const widget = manifest.widgets[0];
     assert.equal(widget.id, "zhadqqqqd.douban.monthlyhot");
-    assert.equal(widget.version, "1.1.2");
+    assert.equal(widget.version, "1.1.3");
     assert.equal(widget.author, "zhadqqqqd");
     assert.equal(
       widget.url,
@@ -48,8 +75,12 @@ function loadMetadata(source, options = {}) {
 
     const source = await fetchText(widget.url);
     const metadata = loadMetadata(source);
-    const strictMetadata = loadMetadata(source, { strict: true });
-    assert.equal(strictMetadata.id, metadata.id, `${manifestUrl} should load WidgetMetadata in strict JS contexts`);
+    const functionGlobalMetadata = loadMetadataFromFunctionGlobal(source);
+    assert.equal(
+      functionGlobalMetadata.id,
+      metadata.id,
+      `${manifestUrl} should expose WidgetMetadata when the app executes source with Function`
+    );
     for (const key of ["id", "title", "description", "requiredVersion", "version", "author"]) {
       assert.equal(widget[key], metadata[key], `${manifestUrl} ${key} should match WidgetMetadata`);
     }

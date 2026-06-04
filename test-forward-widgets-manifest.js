@@ -8,8 +8,12 @@ assert.equal(fs.existsSync(manifestPath), true, "widgets.fwd should exist");
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const widgetModulePath = "widgets/douban-monthly-hot.js";
 const metadata = loadWidgetMetadata(widgetModulePath);
-const strictMetadata = loadWidgetMetadata(widgetModulePath, { strict: true });
-assert.equal(strictMetadata.id, metadata.id, "WidgetMetadata should load in strict JS contexts");
+const functionGlobalMetadata = loadWidgetMetadataFromFunctionGlobal(widgetModulePath);
+assert.equal(
+  functionGlobalMetadata.id,
+  metadata.id,
+  "WidgetMetadata should be visible when the app executes source with Function"
+);
 
 assert.equal(manifest.title, "Forward Douban Widgets");
 assert.equal(typeof manifest.description, "string");
@@ -22,7 +26,7 @@ assert.match(widget.id, /^[A-Za-z0-9.]+$/);
 assert.equal(widget.title, "豆瓣本月热播");
 assert.equal(widget.description, metadata.description);
 assert.equal(widget.requiredVersion, "0.0.1");
-assert.equal(widget.version, "1.1.2");
+assert.equal(widget.version, "1.1.3");
 assert.equal(widget.author, "zhadqqqqd");
 assert.equal(
   widget.url,
@@ -86,4 +90,33 @@ function loadWidgetMetadata(filePath, options = {}) {
     ...sandbox.WidgetMetadata,
     functions: sandbox,
   };
+}
+
+function loadWidgetMetadataFromFunctionGlobal(filePath) {
+  assert.equal(fs.existsSync(filePath), true, `${filePath} should exist`);
+
+  const previousWidget = globalThis.Widget;
+  const previousMetadata = globalThis.WidgetMetadata;
+  try {
+    delete globalThis.WidgetMetadata;
+    globalThis.Widget = {
+      http: {
+        get: async () => ({ data: { subjects: [] } }),
+      },
+    };
+    new Function(fs.readFileSync(filePath, "utf8"))();
+    assert.ok(globalThis.WidgetMetadata, "WidgetMetadata should be defined on globalThis");
+    return JSON.parse(JSON.stringify(globalThis.WidgetMetadata));
+  } finally {
+    if (previousMetadata === undefined) {
+      delete globalThis.WidgetMetadata;
+    } else {
+      globalThis.WidgetMetadata = previousMetadata;
+    }
+    if (previousWidget === undefined) {
+      delete globalThis.Widget;
+    } else {
+      globalThis.Widget = previousWidget;
+    }
+  }
 }
