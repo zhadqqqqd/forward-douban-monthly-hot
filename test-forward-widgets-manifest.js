@@ -55,6 +55,12 @@ assert.deepEqual(
   manifest,
   "forward-widgets.fwd should mirror widgets.fwd"
 );
+assert.equal(fs.existsSync("widgets.json"), true, "widgets.json should exist");
+assert.deepEqual(
+  JSON.parse(fs.readFileSync("widgets.json", "utf8")),
+  manifest,
+  "widgets.json should mirror widgets.fwd"
+);
 
 console.log("ok");
 
