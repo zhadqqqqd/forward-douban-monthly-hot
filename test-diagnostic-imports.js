@@ -13,6 +13,9 @@ for (const manifestPath of ["probe.fwd", "compat.fwd"]) {
 
   assert.equal(widget.id, metadata.id);
   assert.equal(widget.title, metadata.title);
+  for (const key of ["description", "requiredVersion", "version", "author"]) {
+    assert.equal(widget[key], metadata[key], `${localPath} ${key} should match manifest`);
+  }
   assert.equal(typeof metadata.modules[0].functionName, "string");
   assert.equal(typeof metadata.functions[metadata.modules[0].functionName], "function");
   for (const module of metadata.modules) {
