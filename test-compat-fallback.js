@@ -62,7 +62,7 @@ eval(fs.readFileSync(modulePath, "utf8"));
   assert.equal(tvShows.length, 1);
   assert.equal(tvShows[0].id, "fallback-tv");
   assert.equal(tvShows[0].title, "兜底剧集");
-  assert.equal(calls.filter((call) => call.url.includes("m.douban.com/rexxar")).length, 2);
+  assert.equal(calls.filter((call) => call.url.includes("m.douban.com/rexxar")).length, 0);
   assert.equal(calls.filter((call) => call.url.includes("douban-monthly-hot.json")).length, 2);
 
   console.log("fallback ok", { movies: movies.length, tvShows: tvShows.length });

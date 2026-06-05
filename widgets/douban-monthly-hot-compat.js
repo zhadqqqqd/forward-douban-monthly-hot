@@ -50,7 +50,7 @@ const DOUBAN_MONTHLY_HOT_ENDPOINTS = {
   tv: "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items",
 };
 const DOUBAN_MONTHLY_HOT_FALLBACK_URL =
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.10/data/douban-monthly-hot.json";
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.11/data/douban-monthly-hot.json";
 const DOUBAN_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
@@ -70,6 +70,9 @@ async function loadMonthlyHotTV(params = {}) {
 async function loadMonthlyHot(mediaType, params = {}) {
   const page = normalizePositiveInteger(params.page, 1);
   const count = normalizeCount(params.count);
+  const fallbackItems = await loadFallbackMonthlyHot(mediaType, page, count);
+  if (fallbackItems.length > 0) return fallbackItems;
+
   try {
     const response = await Widget.http.get(DOUBAN_MONTHLY_HOT_ENDPOINTS[mediaType], {
       headers: DOUBAN_HEADERS,
@@ -90,7 +93,7 @@ async function loadMonthlyHot(mediaType, params = {}) {
     console.error("[douban-monthly-hot] load failed:", error.message || error);
   }
 
-  return loadFallbackMonthlyHot(mediaType, page, count);
+  return [];
 }
 
 async function loadFallbackMonthlyHot(mediaType, page, count) {
