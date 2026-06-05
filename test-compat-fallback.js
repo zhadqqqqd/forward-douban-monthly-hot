@@ -59,9 +59,15 @@ eval(fs.readFileSync(modulePath, "utf8"));
   assert.equal(movies.length, 1);
   assert.equal(movies[0].id, "fallback-movie");
   assert.equal(movies[0].title, "兜底电影");
+  assert.equal(movies[0].rating, "8.1");
+  assert.match(movies[0].description, /^豆瓣评分 8\.1/);
+  assert.match(movies[0].genreTitle, /豆瓣评分 8\.1/);
   assert.equal(tvShows.length, 1);
   assert.equal(tvShows[0].id, "fallback-tv");
   assert.equal(tvShows[0].title, "兜底剧集");
+  assert.equal(tvShows[0].rating, "7.9");
+  assert.match(tvShows[0].description, /^豆瓣评分 7\.9/);
+  assert.match(tvShows[0].genreTitle, /豆瓣评分 7\.9/);
   assert.equal(calls.filter((call) => call.url.includes("m.douban.com/rexxar")).length, 0);
   assert.equal(calls.filter((call) => call.url.includes("douban-monthly-hot.json")).length, 2);
 
