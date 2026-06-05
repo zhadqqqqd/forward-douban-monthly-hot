@@ -1,16 +1,10 @@
 WidgetMetadata = {
   id: "doubanmonthlyhot",
   title: "豆瓣本月热播",
-  version: "1.1.9",
-  requiredVersion: "0.0.1",
-  description: "豆瓣本月热播电影和剧集",
-  author: "zhadqqqqd",
-  site: "https://github.com/zhadqqqqd/forward-douban-monthly-hot",
   modules: [
     {
       id: "monthlyHotMovies",
       title: "本月热播电影",
-      description: "豆瓣本月热播电影",
       requiresWebView: false,
       functionName: "loadMonthlyHotMovies",
       cacheDuration: 3600,
@@ -31,7 +25,6 @@ WidgetMetadata = {
     {
       id: "monthlyHotTV",
       title: "本月热播剧集",
-      description: "豆瓣本月热播剧集",
       requiresWebView: false,
       functionName: "loadMonthlyHotTV",
       cacheDuration: 3600,
@@ -57,7 +50,7 @@ const DOUBAN_MONTHLY_HOT_ENDPOINTS = {
   tv: "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items",
 };
 const DOUBAN_MONTHLY_HOT_FALLBACK_URL =
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.9/data/douban-monthly-hot.json";
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.10/data/douban-monthly-hot.json";
 const DOUBAN_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
@@ -107,15 +100,24 @@ async function loadFallbackMonthlyHot(mediaType, page, count) {
         "User-Agent": "ForwardWidgets/1.0.0",
       },
     });
-    const items =
-      response && response.data && Array.isArray(response.data[mediaType])
-        ? response.data[mediaType]
-        : [];
+    const data = parseJsonData(response && response.data);
+    const items = data && Array.isArray(data[mediaType]) ? data[mediaType] : [];
     const start = (page - 1) * count;
     return items.slice(start, start + count).filter((item) => item && item.id && item.title);
   } catch (error) {
     console.error("[douban-monthly-hot] fallback failed:", error.message || error);
     return [];
+  }
+}
+
+function parseJsonData(data) {
+  if (!data) return null;
+  if (typeof data !== "string") return data;
+  try {
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("[douban-monthly-hot] invalid fallback json:", error.message || error);
+    return null;
   }
 }
 

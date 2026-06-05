@@ -16,7 +16,7 @@ global.Widget = {
 
       if (url.includes("raw.githubusercontent.com") && url.includes("douban-monthly-hot.json")) {
         return {
-          data: {
+          data: JSON.stringify({
             movie: [
               {
                 id: "fallback-movie",
@@ -39,7 +39,7 @@ global.Widget = {
                 description: "fallback",
               },
             ],
-          },
+          }),
         };
       }
 
