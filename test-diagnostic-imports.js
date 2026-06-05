@@ -17,17 +17,11 @@ for (const manifestPath of ["probe.fwd", "compat.fwd"]) {
   for (const key of ["description", "requiredVersion", "version", "author"]) {
     assert.equal(typeof widget[key], "string", `${manifestPath} widget ${key} should be present`);
   }
-  if (localPath.includes("probe.js")) {
-    for (const key of ["description", "requiredVersion", "version", "author"]) {
-      assert.equal(widget[key], metadata[key], `${localPath} ${key} should match manifest`);
-    }
-  } else {
+  for (const key of ["description", "requiredVersion", "version", "author"]) {
+    assert.equal(widget[key], metadata[key], `${localPath} ${key} should match manifest`);
+  }
+  if (localPath.includes("douban-monthly-hot-compat.js")) {
     assert.equal(widget.version, packageJson.version, "compat.fwd version should match package.json");
-    assert.equal(
-      Object.prototype.hasOwnProperty.call(metadata, "version"),
-      false,
-      "compat WidgetMetadata should keep the v1.1.8 minimal import shape"
-    );
   }
   assert.equal(typeof metadata.modules[0].functionName, "string");
   assert.equal(typeof metadata.functions[metadata.modules[0].functionName], "function");

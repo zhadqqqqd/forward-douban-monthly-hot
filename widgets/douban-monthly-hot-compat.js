@@ -1,6 +1,11 @@
 WidgetMetadata = {
   id: "doubanmonthlyhotstable",
   title: "豆瓣本月热播",
+  version: "1.1.13",
+  requiredVersion: "0.0.1",
+  description: "豆瓣本月热播电影和剧集",
+  author: "zhadqqqqd",
+  site: "https://github.com/zhadqqqqd/forward-douban-monthly-hot",
   modules: [
     {
       id: "monthlyHotMovies",
@@ -50,7 +55,7 @@ const DOUBAN_MONTHLY_HOT_ENDPOINTS = {
   tv: "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items",
 };
 const DOUBAN_MONTHLY_HOT_FALLBACK_URL =
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.12/data/douban-monthly-hot.json";
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.13/data/douban-monthly-hot.json";
 const DOUBAN_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
