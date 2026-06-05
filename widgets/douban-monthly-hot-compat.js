@@ -1,7 +1,7 @@
 WidgetMetadata = {
   id: "doubanmonthlyhotfinal",
   title: "豆瓣本月热播",
-  version: "1.1.15",
+  version: "1.1.16",
   requiredVersion: "0.0.1",
   description: "豆瓣本月热播电影和剧集",
   author: "zhadqqqqd",
@@ -55,7 +55,7 @@ const DOUBAN_MONTHLY_HOT_ENDPOINTS = {
   tv: "https://m.douban.com/rexxar/api/v2/subject_collection/tv_hot/items",
 };
 const DOUBAN_MONTHLY_HOT_FALLBACK_URL =
-  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.15/data/douban-monthly-hot.json";
+  "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.16/data/douban-monthly-hot.json";
 const DOUBAN_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
@@ -196,9 +196,10 @@ function buildDescription(subject, rating) {
 
 function prependRatingText(description, rating) {
   const text = rating ? `豆瓣评分 ${rating}` : "豆瓣暂无评分";
-  if (!description) return text;
-  if (description.indexOf(text) === 0) return description;
-  return `${text} · ${description}`;
+  const cleanDescription = stripLegacyRatingPrefix(description);
+  if (!cleanDescription) return text;
+  if (cleanDescription.indexOf(text) === 0) return cleanDescription;
+  return `${text} · ${cleanDescription}`;
 }
 
 function buildGenreTitle(genreTitle, rating) {
@@ -206,4 +207,10 @@ function buildGenreTitle(genreTitle, rating) {
   if (!genreTitle) return text;
   if (genreTitle.indexOf(text) >= 0) return genreTitle;
   return `${text} · ${genreTitle}`;
+}
+
+function stripLegacyRatingPrefix(description) {
+  return String(description || "")
+    .replace(/^评分\s+\d+(?:\.\d+)?\s*·\s*/, "")
+    .replace(/^暂无评分\s*·\s*/, "");
 }
