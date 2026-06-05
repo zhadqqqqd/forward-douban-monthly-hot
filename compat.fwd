@@ -1,16 +1,16 @@
 {
-  "title": "Douban Monthly Hot Compat",
-  "description": "Douban monthly hot widgets using community-compatible metadata",
+  "title": "Douban Monthly Hot Stable",
+  "description": "Douban monthly hot widgets using stable raw data",
   "icon": "https://assets.vvebo.vip/scripts/icon.png",
   "widgets": [
     {
-      "id": "doubanmonthlyhot",
+      "id": "doubanmonthlyhotstable",
       "title": "豆瓣本月热播",
       "description": "豆瓣本月热播电影和剧集",
       "requiredVersion": "0.0.1",
-      "version": "1.1.11",
+      "version": "1.1.12",
       "author": "zhadqqqqd",
-      "url": "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.11/widgets/douban-monthly-hot-compat.js"
+      "url": "https://raw.githubusercontent.com/zhadqqqqd/forward-douban-monthly-hot/v1.1.12/widgets/douban-monthly-hot-compat.js"
     }
   ]
 }

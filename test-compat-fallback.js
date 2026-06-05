@@ -55,7 +55,7 @@ eval(fs.readFileSync(modulePath, "utf8"));
   const movies = await loadMonthlyHotMovies({ page: 1, count: 20 });
   const tvShows = await loadMonthlyHotTV({ page: 1, count: 20 });
 
-  assert.equal(WidgetMetadata.id, "doubanmonthlyhot");
+  assert.equal(WidgetMetadata.id, "doubanmonthlyhotstable");
   assert.equal(movies.length, 1);
   assert.equal(movies[0].id, "fallback-movie");
   assert.equal(movies[0].title, "兜底电影");

@@ -1,6 +1,6 @@
 {
   "name": "forward-douban-monthly-hot",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "private": true,
   "scripts": {
     "test": "node test-forward-widgets-manifest.js && node test-douban-monthly-hot.js && node test-forward-widget-adaptor.js && node test-diagnostic-imports.js && node test-compat-fallback.js && node test-remote-forward-import.js"
